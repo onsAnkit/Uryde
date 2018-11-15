@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1e26c1</color>
+    <color name="colorPrimaryDark">#1c1c1c</color>
+    <color name="colorAccent">#1e26c1</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#333333</color>
+    <color name="grey">#636363</color>
+    <color name="btnbackprofile">#006FFF</color>
+    <color name="inner_bg_color">#e4bc00</color>
+    <color name="inner_bg_color_pressed">#e4bc00</color>
+    <color name="inner_bg_color_unpressed">#fcc72b</color>
+    <color name="red">#CE151A</color>
+    <item name="gray_holo_light" type="color">#ffd0d0d0</item>
+
+    <array name="array_dot_active">
+        <item>@color/black</item>
+        <item>@color/black</item>
+        <item>@color/black</item>
+        <item>@color/black</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/gray_holo_light</item>
+        <item>@color/gray_holo_light</item>
+        <item>@color/gray_holo_light</item>
+        <item>@color/gray_holo_light</item>
+    </array>
+</resources>

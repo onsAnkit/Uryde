@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="uryde.passenger">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- [START gcm_permission] -->
+    <!--<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />-->
+
+    <!-- [END gcm_permission] -->
+    <permission
+        android:name="uryde.passenger.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="uryde.passenger.MAPS_RECEIVE" />
+
+    <application
+        android:name="uryde.passenger.Uryde"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="uryde.passenger.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uryde.passenger.Login"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name="uryde.passenger.Register"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name="uryde.passenger.cropImage.CropImage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.LandingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.ForgotPassword"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_map_key" />
+
+        <activity
+            android:name="uryde.passenger.searching.SearchAddressGooglePlacesActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="uryde.passenger.SendRequest"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.TermsAndConditions"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.fragments.About"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.howItWorks.HowItWorks"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.RideInfo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.Invoice"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+
+        <service android:name=".notificationService.FcmToken">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".notificationService.FireBaseNotificationService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="uryde.passenger.RateYourDriver"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.RideHistoryDetail"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="6e18e32159f3adda1c28aad8602728314607ca11" />
+
+        <activity
+            android:name="uryde.passenger.JourneyStarted"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.EnterOTP"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="uryde.passenger.rideLater.RideLaterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.cardPayment.ChangeCard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="uryde.passenger.cardPayment.AddStripeCardActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".GeofenceTransitionsIntentService" />
+        <service
+            android:name=".services.TimerService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+    </application>
+
+</manifest>
